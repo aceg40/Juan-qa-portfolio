@@ -802,3 +802,80 @@ h1 span {
     text-decoration: none;
   }
 }
+
+/* Responsive layout fix */
+
+.hero-left,
+.hero-right {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.buttons {
+  flex-wrap: wrap;
+}
+
+.code-card {
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero {
+    min-height: auto;
+    gap: 50px;
+  }
+
+  .hero-identity h1 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    overflow-wrap: break-word;
+  }
+
+  .hero-description {
+    max-width: 100%;
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    gap: 10px;
+  }
+
+  .buttons > a {
+    min-width: 0;
+    min-height: 48px;
+    padding: 12px 8px;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .buttons svg {
+    flex-shrink: 0;
+  }
+
+  .code-card {
+    width: 100%;
+    transform: none;
+  }
+
+  .code-body {
+    overflow-x: auto;
+  }
+
+  .contact-inner > a {
+    display: flex;
+    width: min(100%, 320px);
+    margin: 10px auto;
+  }
+}
+
